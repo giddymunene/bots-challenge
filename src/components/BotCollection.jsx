@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const BotCollection = ({Bots}) => {
+const BotCollection = ({addToArmy}) => {
 const [bots, setData] = useState([]);
+const [selectedBots, setSelectedBots] = useState([]);
 
 useEffect(() => {
 const fetchData = async () => {
@@ -17,11 +18,17 @@ console.error('Error fetching data:', error);
 fetchData();
 }, []);
 
-const handleClick = (bot) => {
-addToArmy(bot);
+
+const handleAddToArmy = () => {
+  selectedBots.forEach(bot => addToArmy(bot));
+  setSelectedBots([]);
 };
-function addToArmy(){
-}
+
+const handleDelete = (botId) => {
+  setData(prevBots => prevBots.filter(bot => bot.id !== botId));
+};
+
+
 return (
 <div>
 <h2>Bot Collection</h2>
@@ -34,9 +41,9 @@ return (
 <p>Damage: {bot.damage}</p>
 <p>Armor: {bot.armor}</p>
 <p>Class:{bot.bot_class}</p>
-<button onClick={() => handleClick(bot)}>Add to My Army</button>
+<button className='btn btn-primary mx-auto' onClick={() =>handleAddToArmy(bot.id)}>Add to My Army</button>
 
-<button className="btn btn-sm btn-danger mx-auto" onClick>X</button>
+<button className='btn btn-danger mx-auto' onClick={() => handleDelete(bot.id)}>X</button>
 
 </div>
 ))}
