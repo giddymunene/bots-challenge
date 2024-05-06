@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bots-challenge/static/css/main.dec40e79.css",
+    "main.js": "/bots-challenge/static/js/main.cd85183f.js",
+    "static/js/453.f5cd46fc.chunk.js": "/bots-challenge/static/js/453.f5cd46fc.chunk.js",
+    "index.html": "/bots-challenge/index.html",
+    "main.dec40e79.css.map": "/bots-challenge/static/css/main.dec40e79.css.map",
+    "main.cd85183f.js.map": "/bots-challenge/static/js/main.cd85183f.js.map",
+    "453.f5cd46fc.chunk.js.map": "/bots-challenge/static/js/453.f5cd46fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dec40e79.css",
+    "static/js/main.cd85183f.js"
+  ]
+}
